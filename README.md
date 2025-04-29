@@ -39,6 +39,8 @@ ALU_with_testBenches_vhdl/
 │   ├── ALU_random/
 │       ├── tb_ALU_rand.vhd
 │       ├── tb_ALU_random.vhd
+├── .gitignore/
+├── README.md/
 ---
 
 ## Testbench Strategy
