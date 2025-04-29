@@ -50,13 +50,14 @@ Multiple testing approaches were used to validate the ALU:
 
 ## Key Learnings
 
-- Handling signed and unsigned arithmetic in VHDL
-- Managing timing between signals vs. variables
-- Ensuring valid test coverage through randomized simulations
-- Using `math_real.uniform()` for input generation
-- Tracking and summarizing pass/fail data per operation
+- Gained experience handling both signed and unsigned arithmetic in VHDL
+- Learned the importance of timing differences between `signal` and `variable`
+- Built confidence in writing randomized self-checking testbenches
+- Used `math_real.uniform()` to generate high-coverage input distributions
+- Implemented per-operation pass/fail tracking for targeted debugging
+- Discovered that certain edge case failures were caused by rounding errors in floating-point to integer conversion
 
-## 📸 Simulation Results
+## Simulation Results
 
 **5000/5000** randomized test cases passed
 
