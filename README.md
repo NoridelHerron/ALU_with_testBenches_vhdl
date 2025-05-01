@@ -2,11 +2,9 @@
 
 ## ALU_8bits
 A beginner-friendly 8-bit ALU written in VHDL. This module was used as a foundation for learning how to build and test ALU functionality using arithmetic and logic operations.
----
 
 ## ALU_32bits
 An extended 32-bit ALU designed for integration into a 5-stage pipelined RISC-V CPU. This version builds on the 8-bit implementation and introduces scalable logic for real CPU datapath usage, complete with a randomized self-checking testbench.
----
 
 ## Supported Operations for ALU_32bits
 
@@ -61,7 +59,6 @@ ALU_with_testBenches_vhdl/
     |   ├── tb_ALU_rand.vhd
 ├── .gitignore/
 ├── README.md/
----
 
 ## Testbench Strategy
 Multiple testing approaches were used to validate the ALU:
