@@ -96,7 +96,7 @@ This shows the final test summary from the randomized testbench
 Captured waveform for a successful OR operation showing `result`, control signals, and flags:
 
 For the ALU_8bits:
-![Waveform](ALU_8bits/images/ALU_wave.png)
+![Waveform](ALU_8bits/images/ALU_WAVE.png)
 
 For the ALU_32bits:
 ![Waveform](ALU_32bits/images/wave_32bits.png)
