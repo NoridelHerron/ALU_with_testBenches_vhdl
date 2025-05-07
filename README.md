@@ -19,13 +19,13 @@ Each ALU supports multiple arithmetic and logic operations and includes self-che
 - Flag outputs: 
     - Z: **Zero flag** is equal to 0 when the result is equal to zero. 
     - N: **Negative flag** is equal to 1 when the most significant is equal to 1 whether the value is signed or unsigned. 
-    - C: Carry/Borrow
+    - C: **Carry/Borrow flag**
         - For addition, C flag = 1 when there is carry. Otherwise, C flag = 0.
         - For subtraction, C flag = 1 when there’s no borrow. Otherwise, C flag = 0.  
-    - V: Overflow
+    - V: **Overflow flag**
     - Overflow occurs when the most significant bit of the two inputs is equal, but the most significant bit of the result is not the same as the most significant bit of the inputs.
 
-    'Note: Overflow and Carry flag only apply to Addition and Subtraction. It's always zero for the other operation'
+    Note: Overflow and Carry flag only apply to Addition and Subtraction. It's always zero for the other operation
   
 ## Internal Module
 - Adder
@@ -39,7 +39,7 @@ Each ALU supports multiple arithmetic and logic operations and includes self-che
     - Takes two 32 bits inputs. 
     - Take 1 bit borrow in, but not necessary. 
     - Take 3 bits input to determine which operation to perform (func 3). 
-    - Take 7 bits input for the choices between function 3. 
+    - Take 7 bits input for the choices between function 3 (0 and 5). 
     - Output 32 bits result. 
     - Output flags. (Z, V, N, and C flags)
   
