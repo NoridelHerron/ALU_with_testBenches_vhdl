@@ -18,7 +18,7 @@ Each ALU supports multiple arithmetic and logic operations and includes self-che
     - Randomized golden-model comparisons
 - Flag outputs: 
     - Z: **Zero flag** is equal to 0 when the result is equal to zero. 
-    - N: **Negative flag** is equal to 1 when the most significant is equal to 1 whether the value is signed or unsigned. 
+    - N: **Negative flag** is equal to 1 when the most significant bit is equal to 1 whether the value is signed or unsigned. 
     - C: **Carry/Borrow flag**
         - For addition, C flag = 1 when there is carry. Otherwise, C flag = 0.
         - For subtraction, C flag = 1 when there’s no borrow. Otherwise, C flag = 0.  
@@ -31,15 +31,11 @@ Each ALU supports multiple arithmetic and logic operations and includes self-che
 - Adder
     - Takes two 32 bits inputs. 
     - Take 1 bit carry in, but not necessary. 
-    - Take 3 bits input to determine which operation to perform (func 3). 
-    - Take 7 bits input for the choices between function 3. 
     - Output 32 bits result.
     - Output flags. (Z, V, N, and C flags)
 - Subtractor
     - Takes two 32 bits inputs. 
     - Take 1 bit borrow in, but not necessary. 
-    - Take 3 bits input to determine which operation to perform (func 3). 
-    - Take 7 bits input for the choices between function 3 (0 and 5). 
     - Output 32 bits result. 
     - Output flags. (Z, V, N, and C flags)
   
