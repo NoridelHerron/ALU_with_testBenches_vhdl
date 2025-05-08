@@ -17,11 +17,28 @@ Each ALU supports multiple arithmetic and logic operations and includes self-che
     - Manual test vectors
     - Randomized golden-model comparisons
 - Flag outputs: 
-    - Z: Zero
-    - N: Negative
-    - C: Carry/Borrow
-    - V: Overflow
+    - Z: **Zero flag** is equal to 0 when the result is equal to zero. 
+    - N: **Negative flag** is equal to 1 when the most significant bit is equal to 1 whether the value is signed or unsigned. 
+    - C: **Carry/Borrow flag**
+        - For addition, C flag = 1 when there is carry. Otherwise, C flag = 0.
+        - For subtraction, C flag = 1 when there’s no borrow. Otherwise, C flag = 0.  
+    - V: **Overflow flag**
+    - Overflow occurs when the most significant bit of the two inputs is equal, but the most significant bit of the result is not the same as the most significant bit of the inputs.
 
+    Note: Overflow and Carry flag only apply to Addition and Subtraction. It's always zero for the other operation
+  
+## Internal Module
+- Adder
+    - Takes two 32 bits inputs. 
+    - Take 1 bit carry in, but not necessary. 
+    - Output 32 bits result.
+    - Output flags. (Z, V, N, and C flags)
+- Subtractor
+    - Takes two 32 bits inputs. 
+    - Take 1 bit borrow in, but not necessary. 
+    - Output 32 bits result. 
+    - Output flags. (Z, V, N, and C flags)
+  
 ## Project Structure
 ALU_with_testBenches_vhdl/
 - ALU_8bits/
