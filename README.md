@@ -43,59 +43,35 @@ Each ALU supports multiple arithmetic and logic operations and includes self-che
 ALU_with_testBenches_vhdl/
 - ALU_8bits/
     - images/
-        - ALU_TCL.png
-        - ALU_WAVE.png
+        - ALU_TCL.png, ALU_WAVE.png
     - src/
-        - adder_8bits.vhd
-        - ALU_8bits.vhd
-        - FullAdder.vhd
-        - FullSubtractor.vhd
-        - sub_8bits.vhd
+        - adder_8bits.vhd, ALU_8bits.vhd, FullAdder.vhd, FullSubtractor.vhd, sub_8bits.vhd
     - test_benches/
         - adder_subtractor/
-            - tb_adder_8bits.vhd
-            - tb_sub_8bits.vhd
+            - tb_adder_8bits.vhd, tb_sub_8bits.vhd
         - ALU_manually/
-            - tb_ALU.vhd
-            - tb_ALU_ext.vhd
-            - tb_ALU_v2.vhd
+            - tb_ALU.vhd, tb_ALU_ext.vhd, tb_ALU_v2.vhd
         - ALU_random/
-            - tb_ALU_rand.vhd
-            - tb_ALU_random.vhd
+            - tb_ALU_rand.vhd, tb_ALU_random.vhd
 - ALU_32bits/
     - images/
-        - passed100_test.png
-        - passed5000_test.png
-        - wave_32bits.png
+        - passed5000_test.png, wave_32bits.png
     - src/
-        - adder_32bits.vhd
-        - ALU_32bits.vhd
-        - FullAdder.vhd
-        - FullSubtractor.vhd
-        - sub_32bits.vhd
+        - adder_32bits.vhd, ALU_32bits.vhd, FullAdder.vhd, FullSubtractor.vhd, sub_32bits.vhd
     - test_bench/
         - tb_ALU_rand.vhd
 - .gitignore
 - README.md
 
 ## Visual Output 
-**For the ALU_8bits:**
-### Waveform Results
-![Waveform](ALU_8bits/images/ALU_WAVE.png)
-
-### Tcl Console Output
-**5000/5000** randomized test cases passed for the ALU_8bits:
-![Tcl Output](ALU_8bits/images/ALU_TCL.png)
-
 **For the ALU_32bits:**
 ### Waveform Results
 ![Waveform](ALU_32bits/images/wave_32bits.png)
 
 ### Tcl Console Output
-**100/100** randomized test cases passed for the ALU_32bits:
-![Tcl Output](ALU_32bits/images/passed100_test.png)
 **5000/5000**  randomized test cases passed for the ALU_32bits:
 ![Tcl Output](ALU_32bits/images/passed5000_test.png)
+*flags behave as described in the architecture."
 
 ## Testbench Strategy
 Multiple testing approaches were used to validate the ALU:
