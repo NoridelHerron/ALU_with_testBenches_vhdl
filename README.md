@@ -7,7 +7,7 @@ This project implements two Arithmetic Logic Units (ALUs) in VHDL:
 Each ALU supports multiple arithmetic and logic operations and includes self-checking testbenches, including randomized test generation to ensure robustness and edge-case coverage.
 
 ## Features
-- 8-bit and 32-bit ALU designs
+- 8-bits and 32-bits ALU designs
 - Supported operations:
     - ADD, SUB
     - SLL, SRL, SRA
@@ -23,7 +23,7 @@ Each ALU supports multiple arithmetic and logic operations and includes self-che
         - For addition, C flag = 1 when there is carry. Otherwise, C flag = 0.
         - For subtraction, C flag = 1 when there’s no borrow. Otherwise, C flag = 0.  
     - V: **Overflow flag**
-    - Overflow occurs when the most significant bit of the two inputs is equal, but the most significant bit of the result is not the same as the most significant bit of the inputs.
+        - Overflow occurs when the most significant bit of the two inputs is equal, but the most significant bit of the result is not the same as the most significant bit of the inputs.
 
     Note: Overflow and Carry flag only apply to Addition and Subtraction. It's always zero for the other operation
   

@@ -10,11 +10,11 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity ALU is
     Port (
-        A, B       : in std_logic_vector (31 downto 0);  -- 32-bit inputs
-        Ci_Bi      : in std_logic;                      -- 1-bit carry/borrow input
-        f3         : in std_logic_vector (2 downto 0);  -- 3-bit ALU opcode (funct3)
-        f7         : in std_logic_vector (6 downto 0);  -- 7-bit extended opcode (funct7)
-        result     : out std_logic_vector (31 downto 0);-- 32-bit result
+        A, B       : in std_logic_vector (31 downto 0);  -- 32-bits inputs
+        Ci_Bi      : in std_logic;                      -- 1-bit carry/borrow input 
+        f3         : in std_logic_vector (2 downto 0);  -- 3-bits opcode (funct3)
+        f7         : in std_logic_vector (6 downto 0);  -- 7-bits extended opcode (funct7)
+        result     : out std_logic_vector (31 downto 0);-- 32-bits result
         Z_flag, V_flag, C_flag, N_flag : out std_logic  -- Flags
     );
 end ALU;
@@ -24,21 +24,21 @@ architecture operations of ALU is
     -- Adder
     component adder_32bits
         Port (A,B : in std_logic_vector(31 downto 0);           -- 32-bits inputs
-              Ci  : in std_logic;                              -- 1-bit input
+              Ci  : in std_logic;                               -- 1-bit input
               Sum : out std_logic_vector(31 downto 0);          -- 32-bits outputs
-              Z_flag, V_flag, C_flag, N_flag : out std_logic); -- 1-bit output
+              Z_flag, V_flag, C_flag, N_flag : out std_logic);  -- 1-bit output
     end component;
     
     -- Subtractor
     component sub_32bits
-        Port (A,B : in std_logic_vector(31 downto 0);            -- 32-bits inputs
-              Bi  : in std_logic;                               -- 1-bit input
+        Port (A,B        : in std_logic_vector(31 downto 0);     -- 32-bits inputs
+              Bi         : in std_logic;                         -- 1-bit input
               difference : out std_logic_vector(31 downto 0);    -- 32-bits outputs
-              Z_flag, V_flag, C_flag, N_flag : out std_logic);  -- 1-bit output
+              Z_flag, V_flag, C_flag, N_flag : out std_logic);   -- 1-bit output
     end component;
     
     -- Internal signals
-    signal func_3 : integer range 0 to 7;
+    signal func_3 : integer range 0 to 7; 
     signal func_7 : integer range 0 to 32;
     signal Z, V, C, N, Za, Va, Ca, Na, Zs, Vs, Cs, Ns : std_logic;
     signal res_add, res_sub, res_temp : std_logic_vector(31 downto 0);
@@ -100,7 +100,7 @@ begin
                 case func_7 is
                     when 0 =>    -- SRL
                         res_temp <= std_logic_vector(shift_right(unsigned(A), to_integer(unsigned(B(4 downto 0)))));
-                    when 32 =>   -- SRA
+                    when 32 =>   -- SRA: shift right arithmetic; preserve the sign by extending MSB (can result in positive or negative value)
                         res_temp <= std_logic_vector(shift_right(signed(A), to_integer(unsigned(B(4 downto 0)))));
                     when others =>
                         res_temp <= (others => '0');
@@ -124,6 +124,7 @@ begin
                 Z_flag <= '0';
             end if;
             N_flag <= res_temp(31); 
+            -- C and V flags are irrelevant for this operation; default them to 0
             V_flag <= '0'; 
             C_flag <= '0';      
         end if;

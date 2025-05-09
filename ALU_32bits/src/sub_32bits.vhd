@@ -8,21 +8,17 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 
 entity sub_32bits is
-    Port (
-        A, B          : in std_logic_vector (31 downto 0);  -- 32-bits inputs
-        Bi            : in std_logic;                       -- Initial borrow-in
-        difference    : out std_logic_vector (31 downto 0); -- Subtraction result
-        Z_flag, V_flag, C_flag, N_flag : out std_logic      -- Flags
-    ); 
+    Port ( A,B        : in std_logic_vector(31 downto 0);     -- 32-bits inputs
+           Bi         : in std_logic;                         -- 1-bit input
+           difference : out std_logic_vector(31 downto 0);    -- 32-bits outputs
+           Z_flag, V_flag, C_flag, N_flag : out std_logic);   -- 1-bit output
 end sub_32bits;
 
 architecture equation of sub_32bits is
 
     component FullSubtractor 
-        port (
-            X, Y, Bin : in std_logic; 
-            Bout, D   : out std_logic
-        ); 
+        port ( X, Y, Bin : in std_logic; 
+               Bout, D   : out std_logic ); 
     end component;  
 
     -- Internal signals

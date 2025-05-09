@@ -9,21 +9,17 @@ use IEEE.NUMERIC_STD.ALL;
 
 -- 32-bit ripple-carry adder
 entity adder_32bits is
-    Port (
-        A, B           : in std_logic_vector (31 downto 0);
-        Ci             : in std_logic;
-        Sum            : out std_logic_vector (31 downto 0);
-        Z_flag, V_flag, C_flag, N_flag : out std_logic
-    ); 
+    Port ( A,B : in std_logic_vector(31 downto 0);           -- 32-bits inputs
+           Ci  : in std_logic;                               -- 1-bit input
+           Sum : out std_logic_vector(31 downto 0);          -- 32-bits outputs
+           Z_flag, V_flag, C_flag, N_flag : out std_logic);  -- 1-bit output
 end adder_32bits;
 
 architecture Equation of adder_32bits is
 
     component FullAdder is 
-        port(
-            A, B, Ci : in std_logic;
-            Co, S    : out std_logic
-        );
+        port( A, B, Ci : in std_logic;
+              Co, S    : out std_logic);
     end component; 
 
     -- Internal signals
